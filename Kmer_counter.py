@@ -3,12 +3,12 @@ KAT = open("KAT.txt","a")
 
 lines = f.readlines()
 str=''
-for lines in lines:
-	lines = lines.rstrip()
-	if lines.startswith(">"):
+for each_line in lines:
+	each_line = each_line.rstrip()
+	if each_line.startswith(">"):
 		continue
 	else:
-		str += lines
+		str += each_line
 	
 		
 k_mer = input("please design a k-mer: ")	
@@ -18,13 +18,13 @@ seq = ''
 for line in str:
 	seq += line.strip()	
 for i in range(len(seq)-int(k_mer)-1):
-	dinulc = seq[i:i+int(k_mer)]
-	if "N" in dinulc or "R" in dinulc or "M" in dinulc :
+	knulc = seq[i:i+int(k_mer)]
+	if "N" in knulc or "R" in knulc or "M" in knulc :
 		continue
-	elif dinulc in percent:
-		percent[dinulc] += 1
+	elif knulc in percent:
+		percent[knulc] += 1
 	else:
-		percent[dinulc] = 1
+		percent[knulc] = 1
 
 
 unique = 0
