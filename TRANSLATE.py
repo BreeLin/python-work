@@ -30,15 +30,16 @@ def translate(seq):
                 break
 	      
 f = open("g:/jiang lab/rotation/rotation/EcoliK12.fasta",'r')
+#Translation = open("TRANSLATION.txt","w") 
 lines = f.readlines()
 str=''
-for lines in lines:
-	lines = lines.rstrip()
-	if lines.startswith(">"):
+for each_line in lines:
+	each_line = each_line.rstrip()
+	if each_line.startswith(">"):
 		continue
-	elif "N" in lines:
+	elif "N" in each_line or "R" in each_line or "M" in each_line:
 		continue		
 	else:
-		str += lines   
+		str += each_line   
 		          
 translate(str)
